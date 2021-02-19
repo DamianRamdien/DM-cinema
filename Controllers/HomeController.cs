@@ -38,7 +38,12 @@ namespace DM_cinema.Controllers
         {
             return View();
         }
-
+        
+        [Route("Cinemas")]
+        public IActionResult Cinemas()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
