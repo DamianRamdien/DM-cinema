@@ -32,15 +32,18 @@ namespace DM_cinema.Controllers
         {
             return View();
         }
-
         [Route("Contact")]
         public IActionResult Contact()
         {
             return View();
         }
-        
         [Route("Cinemas")]
         public IActionResult Cinemas()
+        {
+            return View();
+        }
+        [Route("Info Film")]
+        public IActionResult InfoFilm()
         {
             return View();
         }
