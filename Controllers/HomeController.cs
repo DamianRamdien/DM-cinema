@@ -27,11 +27,9 @@ namespace DM_cinema.Controllers
         {
             return View();
         }
-        [Route("Films/{id}")]
-        public IActionResult Films(string id)
+        [Route("Films")]
+        public IActionResult Films()
         {
-            ViewData["id"] = id;
-            
             return View();
         }
         [Route("Contact")]
