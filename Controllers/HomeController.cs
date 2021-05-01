@@ -71,7 +71,11 @@ namespace DM_cinema.Controllers
         [Route("Films")]
         public IActionResult Films()
         {
-            return View();
+            //alle namen ophalen
+            var names = GetNames();
+
+            //stop de namen in html
+            return View(names);
         }
         [Route("Contact")]
         public IActionResult Contact()

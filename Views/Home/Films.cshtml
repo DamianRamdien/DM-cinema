@@ -2,12 +2,15 @@
 @{
     ViewData["Title"] = "Contact";
 }
-
-<div class="text-center"
+@if (Model != null)
+{
+ <div class="text-center">
      <h1>Alle namen!</h1>
-     @foreach(string naam in Model)
+     @foreach (string naam in Model)
      {
-         <p>@naam</p>
+        <p>@naam</p>
      }
-</div>
+ </div>
+}
+
 
