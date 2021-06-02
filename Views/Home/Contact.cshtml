@@ -4,4 +4,15 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
-ewah dit is de contact pagina
+<form method="post">
+    <div>Voornaam: <input type="text" name="firstname" /></div>
+    @*@Html.ValidationMessageFor(m => m.FirstName)*@
+    <div>Achternaam: <input type="text" name="lastname" /></div>
+    @*@Html.ValidationMessageFor(m => m.LastName)*@
+    <div>E-mail: <input type="text" name="email" /></div>
+    @*@Html.ValidationMessageFor(m => m.Email)*@
+    <div>Telefoon: <input type="text" name="phone" /></div>
+    <div>Adres: <input type="text" name="address" /></div>
+    <div>Beschrijving: <input type="text" name="address" /></div>
+    <input type="submit" value="verstuur" />
+</form>
