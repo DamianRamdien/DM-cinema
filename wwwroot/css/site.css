@@ -1,13 +1,4 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
-
-/* Provide sufficient contrast against white background */
+﻿/* Provide sufficient contrast against white background */
 a {
   color: #0366d6;
 }
@@ -53,19 +44,165 @@ button.accept-policy {
 
 /* Sticky footer styles
 -------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.container {
+    height: auto;    
+}
+
+.box {
+    margin-top: 7px;
+    left: 50%;
+    background-color: #b1d4ff;
+    text-align:center;
+    height: 1000px;
+}
+
+/* Navigation bar
+-------------------------------------------------- */
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background: #1b6ec2;
+    padding: 30px 0;
+    box-shadow: 0px 7px 0px #b2b2b2;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #c1c1c1;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 30px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .6s;
+}
+
+nav ul li a:hover {
+    color: #808080;
+    text-decoration: none;
+    border-bottom: 1px solid #808080;
+    padding-bottom: 5px;
+}
+
+/* Footer
+-------------------------------------------------- */
+
+a { /*footer styling*/
+    opacity: 1;
+    color: #ee1960;
+    text-decoration: none;
+    transition: all 300ms ease;
+}
+
+
+a[target="foot"] {
+    opacity: 1;
+    color: #e7dce8;
+    text-decoration: none;
+    transition: all 300ms ease;
+}
+
+a:hover {
+    opacity: 0.6;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer {
+    background-color: #122f6b;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+    footer a {
+        text-decoration: none;
+        color: #eee;
+    }
+
+a:hover {
+    text-decoration: underline;
+}
+
+.ft-title {
+    color: #fff;
+    font-family: 'Fredoka One';
+    padding-bottom: 0.625rem;
+}
+
+.ft-main {
+    padding: 1.25rem 1.875rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ft-main-item {
+    padding: 1.25rem;
+    min-width: 12.5rem /*200px*/;
+    font-family: 'roboto', sans-serif;
+    color: white;
+}
+
+@media only screen and (min-width: 29.8125rem /*477px*/ ) { /*footer responsive*/
+    .ft-main {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (min-width: 77.5rem /*1240px*/ ) { /*footer responsive*/
+    .ft-main {
+        justify-content: space-evenly;
+    }
+}
+
+.ft-social {
+    padding: 0 1.875rem 1.25rem;
+}
+
+.ft-social-list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px #777 solid;
+    padding-top: 1.25rem;
+}
+
+.ft-social-list li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
 }

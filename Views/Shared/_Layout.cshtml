@@ -3,20 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DM_cinema</title>
+    <title>@ViewData["Title"] - DM-cinema</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" href="~/img/logo.png" type="image/gif" sizes="16x16">
 </head>
+
 <body>
-    <nav>
-        <a href="/contact">Contact</a>
-        <a href="/Films">Films</a>
+    <nav class="stroke">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/Cinemas">Cinemas</a></li>
+            <li><a href="/Films">Films</a></li>
+        </ul>
     </nav>
 
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <div class="box">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
 </body>
 </html>
