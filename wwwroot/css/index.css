@@ -1,0 +1,41 @@
+﻿.introtext{
+    width:100%;
+}
+
+.introtext h1{
+    padding-top: 10px;
+}
+
+.intro {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/img/introimage.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    height: 700px;
+    width: 100%;
+}
+
+.intro h1 {
+    font-family: 'Fredoka One';
+    font-size: 400%;
+    padding: 5% 3% 2% 3%;
+    text-align: center;
+    text-decoration: overline;
+    color: white;
+    width:100%;
+}
+
+.intro p {
+    font-family: 'Fredoka one';
+    color: white;
+    font-size: 150%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}

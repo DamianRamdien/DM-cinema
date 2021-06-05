@@ -3,13 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DM-cinema</title>
+    <title>@ViewData["Title"] | DM - Cinema</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="~/img/logo.png" type="image/gif" sizes="16x16">
 </head>
 
 <body>
+    <div class="topnav">
+        <a class="navbar-brand" href="/">
+             <img target="logo" src="~/img/logo.png">
+        </a>
+        <p><a href="/">DM - Cinema</a></p>
+    </div>
     <nav class="stroke">
         <ul>
             <li><a href="/">Home</a></li>
@@ -19,12 +26,50 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <div class="box">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
+    <div class="box">
+        <main role="main" @*class="pb-3"*@>
+            @RenderBody()
+        </main>
     </div>
+
+    <footer>
+        <section class="ft-main">
+            <div class="ft-main-item">
+                <h2 class="ft-title">About us</h2>
+                <ul>
+                    <li>Location: <a href="https://goo.gl/maps/g9M2hE9frqc9RNdR8" target="_blank">Sint-Maartenscollege, Voorburg</a></li>
+                    <li><a href="/Cinemas">Who we are</a></li>
+                </ul>
+            </div>
+            <div class="ft-main-item">
+                <h2 class="ft-title">Contact</h2>
+                <ul>
+                    <li><a href="/contact">Contact us</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="ft-social">
+            <ul class="ft-social-list">
+                <li>
+                    <a href="" class="fa fa-linkedin" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-facebook" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-twitter" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-instagram" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-youtube" target="_blank"></a>
+                </li>
+                <li>
+                    <a href="" class="fa fa-reddit" target="_blank"></a>
+                </li>
+            </ul>
+        </section>
+    </footer>
 </body>
 </html>

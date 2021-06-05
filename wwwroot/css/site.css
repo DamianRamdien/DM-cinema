@@ -1,8 +1,4 @@
 ﻿/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
-}
-
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -51,24 +47,16 @@ body {
     background-color: #fff;
 }
 
+.box{
+    width:100%;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
-}
-
-.container {
-    height: auto;    
-}
-
-.box {
-    margin-top: 7px;
-    left: 50%;
-    background-color: #b1d4ff;
-    text-align:center;
-    height: 1000px;
 }
 
 /* Navigation bar
@@ -78,8 +66,9 @@ nav {
     width: 100%;
     margin: 0 auto;
     background: #1b6ec2;
-    padding: 30px 0;
-    box-shadow: 0px 7px 0px #b2b2b2;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
 }
 
 nav ul {
@@ -95,10 +84,11 @@ nav ul li a {
     display: block;
     padding: 15px;
     text-decoration: none;
-    color: #c1c1c1;
+    color: #fff;
     font-weight: 800;
     text-transform: uppercase;
     margin: 0 30px;
+    text-align: center;
 }
 
 nav ul li a,
@@ -108,16 +98,47 @@ nav ul li a:before {
 }
 
 nav ul li a:hover {
-    color: #808080;
+    color: #000000;
     text-decoration: none;
     border-bottom: 1px solid #808080;
     padding-bottom: 5px;
 }
 
+.topnav { 
+    min-width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom:10px;
+}
+
+.topnav p {
+    align-self: center;
+    flex-grow: 1;
+    padding-right: 10%;
+    font-size: 300%;
+    padding-right: 10%;
+    text-decoration:none;
+    color:white !important;
+}
+
+.topnav p a{
+    text-decoration: none;
+    color: white;
+}
+
+img[target="logo"] {
+    margin-left: 20px;
+    width: 40%;
+}
 /* Footer
 -------------------------------------------------- */
 
-a { /*footer styling*/
+footer a {
     opacity: 1;
     color: #ee1960;
     text-decoration: none;
@@ -151,10 +172,10 @@ footer {
     line-height: 1.5;
 }
 
-    footer a {
-        text-decoration: none;
-        color: #eee;
-    }
+footer a {
+    text-decoration: none;
+    color: #eee;
+}
 
 a:hover {
     text-decoration: underline;
@@ -174,18 +195,18 @@ a:hover {
 
 .ft-main-item {
     padding: 1.25rem;
-    min-width: 12.5rem /*200px*/;
+    min-width: 12.5rem;
     font-family: 'roboto', sans-serif;
     color: white;
 }
 
-@media only screen and (min-width: 29.8125rem /*477px*/ ) { /*footer responsive*/
+@media only screen and (min-width: 29.8125rem ) { 
     .ft-main {
         justify-content: space-around;
     }
 }
 
-@media only screen and (min-width: 77.5rem /*1240px*/ ) { /*footer responsive*/
+@media only screen and (min-width: 77.5rem  ) { 
     .ft-main {
         justify-content: space-evenly;
     }
