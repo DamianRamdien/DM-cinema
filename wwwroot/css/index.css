@@ -39,3 +39,17 @@
     margin-bottom: 10%;
     margin-top: 5%;
 }
+
+.films {
+    background-color: lightcyan;
+    padding-top: 60px;
+    background: linear-gradient(180deg, #e64e4e 0%, rgba(255, 255, 255, 0) 100%), #6DC6CE;
+}
+
+.upcomingfilms{
+    margin: 0px 10% 30px 10%;
+    background-color: lightblue;
+    border-radius: 30px;
+    padding: 20px 0px 20px 20px;
+    min-height: 300px;
+}

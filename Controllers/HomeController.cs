@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using DM_cinema.Database;
+
 
 namespace DM_cinema.Controllers
 {
@@ -22,20 +24,19 @@ namespace DM_cinema.Controllers
 
         public IActionResult Index()
         {
-            //alle namen ophalen
-            var names = GetNames();
-           
-            //stop de namen in html
-            return View(names);
+            List<Film> films= new List<Film>();
+            films = GetFilms();
+
+            return View(films);
         }
         
-        public List<string> GetNames()
+        private List<Film> GetFilms()
         {
             // stel in waar de database gevonden kan worden
             string connectionString = "Server=informatica.st-maartenscollege.nl;Database=110560;Uid=110560;Pwd=inf2021sql;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
-            List<string> names = new List<string>();
+            List<Film> films = new List<Film>();
 
             // verbinding maken met de database
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -44,7 +45,7 @@ namespace DM_cinema.Controllers
                 conn.Open();
 
                 // SQL query die we willen uitvoeren
-                MySqlCommand cmd = new MySqlCommand("select * from product", conn);
+                MySqlCommand cmd = new MySqlCommand("select * from film", conn);
 
                 // resultaat van de query lezen
                 using (var reader = cmd.ExecuteReader())
@@ -52,17 +53,21 @@ namespace DM_cinema.Controllers
                     // elke keer een regel (of eigenlijk: database rij) lezen
                     while (reader.Read())
                     {
-                        // selecteer de kolommen die je wil lezen. In dit geval kiezen we de kolom "naam"
-                        string Name = reader["Naam"].ToString();
-
-                        // voeg de naam toe aan de lijst met namen
-                        names.Add(Name);
+                        Film p = new Film
+                        {
+                            Id = Convert.ToInt32(reader["id"]),
+                            Naam = reader["naam"].ToString(),
+                            Beschrijving = reader["beschrijving"].ToString(),
+                            Genre = reader["genre"].ToString(),
+                            Datum = reader["datum"].ToString(),
+                            Duur = reader["duur"].ToString(),
+                        };
+                        films.Add(p);
                     }
                 }
             }
-
-            // return de lijst met namen
-            return names;
+            // return de lijst met films
+            return films;
         }
         public IActionResult Privacy()
         {
@@ -71,11 +76,10 @@ namespace DM_cinema.Controllers
         [Route("Films")]
         public IActionResult Films()
         {
-            //alle namen ophalen
-            var names = GetNames();
+            List<Film> films = new List<Film>();
+            films = GetFilms();
 
-            //stop de namen in html
-            return View(names);
+            return View(films);
         }
         [Route("Contact")]
         public IActionResult Contact()
