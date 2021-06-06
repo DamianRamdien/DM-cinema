@@ -50,6 +50,46 @@
     margin: 0px 10% 30px 10%;
     background-color: lightblue;
     border-radius: 30px;
-    padding: 20px 0px 20px 20px;
-    min-height: 300px;
+    padding: 20px 0px 20px 50px;
+    max-height: 400px;
+}
+
+.filmplaatje{
+    border-radius: 10%;
+    width: 170px;
+    height: auto;
+}
+
+.header h2 {
+    position: relative;
+    top: 45px;
+    left: 215px;
+}
+
+.filminfo {
+    top: -190px;
+    left: 215px;
+    position: relative;
+}
+
+.beschrijving {
+    width: 70%;
+    overflow: hidden;
+}
+
+.meerbeschrijving {
+    color: #ff0000;
+}
+
+
+@media screen and (max-width:560px) {
+    .filmplaatje{
+        display:none;
+    }
+    .header h2{
+        position: unset;
+    }
+    .filminfo{
+        position: unset;
+    }
 }

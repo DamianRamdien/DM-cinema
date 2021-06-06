@@ -25,15 +25,15 @@
     @foreach (Film f in Model)
     {
 <div class="upcomingfilms">
-    <div class="lcolumn">
-        <div class="header">
-            <h2>@f.Naam</h2>
-        </div>
-        <div class="databaseinfo">
-            <p> <u>Date:</u> @f.Datum</p>
-            <p> <u>Time:</u> @f.Duur  </p>
-        </div>
-        <a class="detailpage" href="festivals/@f.Id">Read more...</a>
+    <div class="header">
+        <h2>@f.Naam</h2>
+        <img class="filmplaatje" src="@f.Img" />
+    </div>
+    <div class="filminfo">
+        <p> <u>Date:</u> @f.Datum</p>
+        <p> <u>Time:</u> @f.Duur  </p>
+        <p class="beschrijving">@f.Beschrijvingkort() ...</p>
+        <a class="meerbeschrijving" href="films/@f.Id">Read more...</a>
     </div>
 </div>
                 <br />}

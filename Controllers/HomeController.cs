@@ -17,6 +17,8 @@ namespace DM_cinema.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        string connectionString = "Server=informatica.st-maartenscollege.nl;Database=110560;Uid=110560;Pwd=inf2021sql;";
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -58,6 +60,7 @@ namespace DM_cinema.Controllers
                             Id = Convert.ToInt32(reader["id"]),
                             Naam = reader["naam"].ToString(),
                             Beschrijving = reader["beschrijving"].ToString(),
+                            Img = reader["img"].ToString(),
                             Genre = reader["genre"].ToString(),
                             Datum = reader["datum"].ToString(),
                             Duur = reader["duur"].ToString(),
@@ -73,6 +76,7 @@ namespace DM_cinema.Controllers
         {
             return View();
         }
+
         [Route("Films")]
         public IActionResult Films()
         {
@@ -81,21 +85,61 @@ namespace DM_cinema.Controllers
 
             return View(films);
         }
+
         [Route("Contact")]
         public IActionResult Contact()
         {
             return View();
         }
+
         [Route("Cinemas")]
         public IActionResult Cinemas()
         {
             return View();
         }
+
         [Route("Info Film")]
         public IActionResult InfoFilm()
         {
             return View();
         }
+
+        [Route("films/{id}")]
+        public IActionResult Films(string id)
+        {
+            var model = GetFilm(id);
+
+            return View(model);
+        }
+        private Film GetFilm(string id)
+        {
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"select * from film where id = {id}", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Film p = new Film
+                        {
+                            Id = Convert.ToInt32(reader["id"]),
+                            Naam = reader["naam"].ToString(),
+                            Beschrijving = reader["beschrijving"].ToString(),
+                            Img = reader["img"].ToString(),
+                            Genre = reader["genre"].ToString(),
+                            Datum = reader["datum"].ToString(),
+                            Duur = reader["duur"].ToString(),
+                        };
+                        return p;
+                    }
+                }
+            }
+            return null;
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

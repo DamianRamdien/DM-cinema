@@ -1,16 +1,22 @@
-﻿@model List<string>
-@{
-    ViewData["Title"] = "Contact";
+﻿@model DM_cinema.Database.Film
+@{ ViewData["Title"] = "Film"; }
+
+@section style{
+    <link href="/css/films.css" type="text/css" rel="stylesheet" />
 }
-@if (Model != null)
-{
- <div class="text-center">
-     <h1>Alle namen!</h1>
-     @foreach (string naam in Model)
-     {
-        <p>@naam</p>
-     }
- </div>
-}
+
+<h1>@Model.Naam</h1>
+
+<div class="flexbox">
+    <div class="left"><img class="logo" src="@Model.Img" /></div>
+    <div class="right">
+        <div>
+            <h3>Date: @Model.Datum</h3>
+        </div>
+        <h3>About:</h3>
+        <p> @Model.Beschrijving</p> <br /> <br />      
+    </div>
+</div>
+
 
 
