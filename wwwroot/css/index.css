@@ -46,6 +46,15 @@
     background: linear-gradient(180deg, #e64e4e 0%, rgba(255, 255, 255, 0) 100%), #6DC6CE;
 }
 
+.films h1 {
+    font-family: 'Fredoka One';
+    font-size: 250%;
+    text-align: center;
+    color: black;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
 .upcomingfilms{
     margin: 0px 10% 30px 10%;
     background-color: lightblue;
@@ -70,6 +79,7 @@
     top: -190px;
     left: 215px;
     position: relative;
+    margin-right: 100px;
 }
 
 .beschrijving {

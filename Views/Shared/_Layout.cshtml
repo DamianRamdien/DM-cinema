@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] | DM - Cinema</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/index.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" href="~/img/logo.png" type="image/gif" sizes="16x16">
     @RenderSection("style", false)
@@ -21,9 +22,9 @@
     <nav class="stroke">
         <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/Cinemas">Cinemas</a></li>
             <li><a href="/Films">Films</a></li>
+            <li><a href="/Cinemas">Cinemas</a></li>
+            <li><a href="/Contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -36,16 +37,16 @@
     <footer>
         <section class="ft-main">
             <div class="ft-main-item">
+                <h2 class="ft-title">Contact</h2>
+                <ul>
+                    <li><a href="/contact">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="ft-main-item">
                 <h2 class="ft-title">About us</h2>
                 <ul>
                     <li>Location: <a href="https://goo.gl/maps/g9M2hE9frqc9RNdR8" target="_blank">Sint-Maartenscollege, Voorburg</a></li>
                     <li><a href="/Cinemas">Who we are</a></li>
-                </ul>
-            </div>
-            <div class="ft-main-item">
-                <h2 class="ft-title">Contact</h2>
-                <ul>
-                    <li><a href="/contact">Contact us</a></li>
                 </ul>
             </div>
         </section>

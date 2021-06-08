@@ -1,22 +1,19 @@
 ﻿@model DM_cinema.Database.Film
-@{ ViewData["Title"] = "Film"; }
+@{ ViewData["Title"] = "Films"; }
 
-@section style{
-    <link href="/css/films.css" type="text/css" rel="stylesheet" />
-}
-
-<h1>@Model.Naam</h1>
-
-<div class="flexbox">
-    <div class="left"><img class="logo" src="@Model.Img" /></div>
-    <div class="right">
-        <div>
-            <h3>Date: @Model.Datum</h3>
+<div class="filmbox">
+    <div class="filmcontainer">
+        <div class="header">
+            <h2>@Model.Naam</h2>
+            <img class="filmplaatje" src="@Model.Img" />
         </div>
-        <h3>About:</h3>
-        <p> @Model.Beschrijving</p> <br /> <br />      
+        <div class="filminfo">
+            <p> <u>Date:</u> @Model.Datum</p>
+            <p> <u>Time:</u> @Model.Duur  </p>
+            <p class="beschrijving">@Model.Beschrijving</p>
+            <div class="kaartjes">
+                <a href="#">Buy tickets</a>
+            </div>
+        </div>
     </div>
 </div>
-
-
-
