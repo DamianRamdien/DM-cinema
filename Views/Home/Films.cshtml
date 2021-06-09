@@ -1,6 +1,7 @@
 ﻿@model DM_cinema.Database.Film
 @{ ViewData["Title"] = "Films"; }
 
+
 <div class="filmbox">
     <div class="filmcontainer">
         <div class="header">
@@ -10,6 +11,8 @@
         <div class="filminfo">
             <p> <u>Date:</u> @Model.Datum</p>
             <p> <u>Time:</u> @Model.Duur  </p>
+            <p> <u>Age:</u> @Model.Leeftijd</p>
+            <p> <u>Genre:</u> @Model.Genre</p>
             <p class="beschrijving">@Model.Beschrijving</p>
             <div class="kaartjes">
                 <a href="#">Buy tickets</a>

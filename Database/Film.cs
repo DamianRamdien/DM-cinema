@@ -18,6 +18,8 @@ namespace DM_cinema.Database
 
         public string Datum { get; set; }
 
-        public string Duur { get; set; } 
+        public string Duur { get; set; }
+        public string Leeftijd { get; set; }
+
     }
 }

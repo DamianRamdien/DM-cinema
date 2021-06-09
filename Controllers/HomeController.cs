@@ -64,6 +64,7 @@ namespace DM_cinema.Controllers
                             Genre = reader["genre"].ToString(),
                             Datum = reader["datum"].ToString(),
                             Duur = reader["duur"].ToString(),
+                            Leeftijd = reader["leeftijd"].ToString(),
                         };
                         films.Add(p);
                     }
@@ -77,8 +78,8 @@ namespace DM_cinema.Controllers
             return View();
         }
 
-        [Route("Films")]
-        public IActionResult Films()
+        [Route("Movies")]
+        public IActionResult Movies()
         {
             List<Film> films = new List<Film>();
             films = GetFilms();
@@ -132,6 +133,7 @@ namespace DM_cinema.Controllers
                             Genre = reader["genre"].ToString(),
                             Datum = reader["datum"].ToString(),
                             Duur = reader["duur"].ToString(),
+                            Leeftijd = reader["leeftijd"].ToString(),
                         };
                         return p;
                     }

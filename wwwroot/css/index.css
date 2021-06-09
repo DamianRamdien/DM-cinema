@@ -21,7 +21,7 @@
 }
 
 .intro h1 {
-    font-family: 'Fredoka One';
+    font-family: Consolas;
     font-size: 400%;
     padding: 5% 3% 2% 3%;
     text-align: center;
@@ -31,7 +31,7 @@
 }
 
 .intro p {
-    font-family: 'Fredoka one';
+    font-family: Consolas;
     color: white;
     font-size: 150%;
     width: 100%;
@@ -47,7 +47,7 @@
 }
 
 .films h1 {
-    font-family: 'Fredoka One';
+    font-family: Consolas;
     font-size: 250%;
     text-align: center;
     color: black;
@@ -59,8 +59,8 @@
     margin: 0px 10% 30px 10%;
     background-color: lightblue;
     border-radius: 30px;
-    padding: 20px 0px 20px 50px;
-    max-height: 400px;
+    padding: 20px 0px 0px 50px;
+    height:auto;
 }
 
 .filmplaatje{
@@ -92,7 +92,7 @@
 }
 
 
-@media screen and (max-width:560px) {
+@media screen and (max-width:700px) {
     .filmplaatje{
         display:none;
     }

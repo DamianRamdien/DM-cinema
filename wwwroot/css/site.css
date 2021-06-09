@@ -141,6 +141,13 @@ img[target="logo"] {
     margin-left: 20px;
     width: 40%;
 }
+
+@media screen and (max-width:560px) {
+    img[target="logo"] {
+        display: none;
+    }
+}
+
 /* Footer
 -------------------------------------------------- */
 
@@ -167,10 +174,10 @@ footer {
     line-height: 1.5;
 }
 
-footer a {
-    text-decoration: none;
-    color: #eee;
-}
+    footer a {
+        text-decoration: none;
+        color: #eee;
+    }
 
 a:hover {
     text-decoration: underline;
@@ -178,7 +185,7 @@ a:hover {
 
 .ft-title {
     color: #fff;
-    font-family: 'Fredoka One';
+    font-family: Consolas;
     padding-bottom: 0.625rem;
 }
 
@@ -190,18 +197,18 @@ a:hover {
 
 .ft-main-item {
     padding: 1.25rem;
-    min-width: 12.5rem /*200px*/;
+    min-width: 12.5rem;
     font-family: 'roboto', sans-serif;
     color: white;
 }
 
-@media only screen and (min-width: 29.8125rem /*477px*/ ) { /*footer responsive*/
+@media only screen and (min-width: 477px) {
     .ft-main {
         justify-content: space-around;
     }
 }
 
-@media only screen and (min-width: 77.5rem /*1240px*/ ) { /*footer responsive*/
+@media only screen and (min-width: 1240px) { 
     .ft-main {
         justify-content: space-evenly;
     }
@@ -218,10 +225,10 @@ a:hover {
     padding-top: 1.25rem;
 }
 
-.ft-social-list li {
-    margin: 20px;
-    font-size: 1.25rem;
-}
+    .ft-social-list li {
+        margin: 20px;
+        font-size: 1.25rem;
+    }
 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -247,7 +254,7 @@ a:hover {
 /* Films */
 
 .filmtitel {
-    font-family: 'Fredoka One';
+    font-family: Consolas;
     font-size: 300%;
     padding: 3% 3% 0% 2%;
     text-align: center;
@@ -263,7 +270,7 @@ a:hover {
 }
 
 .filmcontainer {
-    margin: 0px 10% 0px 10%;
+    margin: 4% 10% 0px 10%;
     background-color: lightblue;
     border-radius: 30px;
     padding: 20px 0px 0px 50px;
@@ -301,4 +308,59 @@ a:hover {
     .logo{
         display:none;
     }
+}
+
+.cinemas {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background: linear-gradient(180deg, #e64e4e 0%, rgba(255, 255, 255, 0) 100%), #6DC6CE;
+}
+
+.cinemastext{
+    width: 80%;
+    margin:auto;
+}
+
+.cinemastext h1 {
+    font-family: Consolas;
+    font-size: 250%;
+    text-decoration: overline;
+    margin-bottom: 10px;
+}
+
+.cinemastext img{
+    width: 500px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+iframe {
+    min-height: 50vh;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 30px;
+}
+
+img[target="mvo"]{
+    width: 400px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.cinemascontainer{
+    height: auto;
+    margin: 60px 0px 60px 0px;
 }
