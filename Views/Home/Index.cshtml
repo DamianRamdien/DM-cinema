@@ -4,25 +4,65 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="intro">
-    <div class="introtext">
-        <h1>
-            Welcome to DM - Cinema
-        </h1>
+<head>
+    <script>
+        function setCookie(cname,cvalue,exdays) {
+          var d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60));
+          var expires = "expires=" + d.toGMTString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
 
-        <p>
-            Welcome to the best Cinema in the World <br />
-            At DM - Cinema, we provide the best experience for watching movies
-        </p>
+        function getCookie(cname) {
+          var name = cname + "=";
+          var decodedCookie = decodeURIComponent(document.cookie);
+          var ca = decodedCookie.split(';');
+          for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+
+        function checkCookie() {
+          var user=getCookie("username");
+          if (user != "") {
+            alert("Welcome again " + user);
+          } else {
+             user = prompt("Please enter your name:","");
+             if (user != "" && user != null) {
+               setCookie("username", user, 30);
+             }
+          }
+        }
+    </script>
+</head>
+
+<body onload="checkCookie()">
+    <div class="intro">
+        <div class="introtext">
+            <h1>
+                Welcome to DM - Cinema
+            </h1>
+
+            <p>
+                Welcome to the best Cinema in the World <br />
+                At DM - Cinema, we provide the best experience for watching movies
+            </p>
+        </div>
     </div>
-</div>
 
-<div class="films">
-    <h1>
-        Upcoming movies
-    </h1>
-    @foreach (Film f in Model)
-    {
+    <div class="films">
+        <h1>
+            Upcoming movies
+        </h1>
+        @foreach (Film f in Model)
+        {
 <div class="upcomingfilms">
     <div class="header">
         <h2>@f.Naam</h2>
@@ -37,4 +77,5 @@
     </div>
 </div>
                 <br />}
-</div>
+    </div>
+</body>
