@@ -73,10 +73,6 @@ namespace DM_cinema.Controllers
             // return de lijst met films
             return films;
         }
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         [Route("Movies")]
         public IActionResult Movies()
@@ -117,8 +113,8 @@ namespace DM_cinema.Controllers
             return View();
         }
 
-        [Route("Info Film")]
-        public IActionResult InfoFilm()
+        [Route("error")]
+        public IActionResult error()
         {
             return View();
         }
