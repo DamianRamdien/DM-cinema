@@ -1,18 +1,39 @@
-﻿@{
+﻿@model PersonModel 
+@{
     ViewData["Title"] = "Contact";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
-<form method="post">
-    <div>Voornaam: <input type="text" name="firstname" /></div>
-    @*@Html.ValidationMessageFor(m => m.FirstName)*@
-    <div>Achternaam: <input type="text" name="lastname" /></div>
-    @*@Html.ValidationMessageFor(m => m.LastName)*@
-    <div>E-mail: <input type="text" name="email" /></div>
-    @*@Html.ValidationMessageFor(m => m.Email)*@
-    <div>Telefoon: <input type="text" name="phone" /></div>
-    <div>Adres: <input type="text" name="address" /></div>
-    <div>Beschrijving: <input type="text" name="address" /></div>
-    <input type="submit" value="verstuur" />
-</form>
+@if (Model != null)
+{
+
+}
+
+<div class="contact">
+    <div class="contactcontainer">
+        <h1 id="contact">@ViewData["Title"]</h1>
+        <form method="post">
+            <label for="fname">First name</label><br />
+            @Html.ValidationMessageFor(m => m.firstname, "", new { @class = "error" })
+            <input type="text" id="fname" name="firstname" placeholder="Your name" /> <br />
+
+            <label for="lname">Last name</label><br />
+            @Html.ValidationMessageFor(m => m.lastname, "", new { @class = "error" })
+            <input type="text" id="lname" name="lastname" placeholder="Your name" /> <br />
+
+            <label for="phone">Phone number</label><br />
+            @Html.ValidationMessageFor(m => m.phonenumber, "", new { @class = "error" })
+            <input type="text" id="phone" name="phonenumber" placeholder="Your phone number" /><br />
+
+            <label for="email">Email address</label><br />
+            @Html.ValidationMessageFor(m => m.email, "", new { @class = "error" })
+            <input type="text" id="email" name="email" placeholder="Your email" /> <br />
+
+            <label for="subject">What do you want to contact us about?</label><br />
+            @Html.ValidationMessageFor(m => m.subject, "", new { @class = "error" })
+            <textarea id="subject" name="subject" placeholder="Write something"></textarea><br />
+
+            <input type="submit" value="Send" />
+
+        </form>
+    </div>
+</div>

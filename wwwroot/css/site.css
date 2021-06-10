@@ -364,3 +364,74 @@ img[target="mvo"]{
     height: auto;
     margin: 60px 0px 60px 0px;
 }
+
+.contact {
+    background: linear-gradient(180deg, #e64e4e 0%, rgba(255, 255, 255, 0) 100%), #6DC6CE;
+}
+
+.contactcontainer {
+    border-radius: 5px;
+    padding: 20px;
+    margin: auto;
+    width: 50%;
+}
+
+#contact{
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+    font-family: Consolas;
+}
+
+.error {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.field-validation-error {
+    color: red;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+}
+
+input[type=submit] {
+    background-color: #122f6b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input[type=submit]:hover {
+    opacity: 0.8;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
+}
+
+#gelukt {
+    background: url('/img/gelukt.gif');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 700px;
+    width: 100%;
+    margin-bottom: 0;
+    color: white;
+    font-size: 400%;
+}

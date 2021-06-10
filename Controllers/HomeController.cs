@@ -88,7 +88,25 @@ namespace DM_cinema.Controllers
         }
 
         [Route("Contact")]
-        public IActionResult Contact()
+        public IActionResult contact()
+        {
+            return View();
+        }
+
+        [Route("Contact")]
+        [HttpPost]
+        public IActionResult contact(PersonModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            SavePerson(model);
+
+            return Redirect("/gelukt");
+        }
+
+        [Route("gelukt")]
+        public IActionResult gelukt()
         {
             return View();
         }
@@ -140,6 +158,21 @@ namespace DM_cinema.Controllers
                 }
             }
             return null;
+        }
+
+        private void SavePerson(PersonModel person)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO customer(firstname, lastname, phonenumber, email, subject) VALUES(?firstname, ?lastname, ?phonenumber, ?email, ?subject)", conn);
+                cmd.Parameters.Add("?firstname", MySqlDbType.VarChar).Value = person.firstname;
+                cmd.Parameters.Add("?lastname", MySqlDbType.VarChar).Value = person.lastname;
+                cmd.Parameters.Add("?phonenumber", MySqlDbType.VarChar).Value = person.phonenumber;
+                cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = person.email;
+                cmd.Parameters.Add("?subject", MySqlDbType.VarChar).Value = person.subject;
+                cmd.ExecuteNonQuery();
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
